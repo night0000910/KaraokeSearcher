@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="container">
+    <form class="row g-3" method="POST" action="">{% csrf_token %}
+        <input type="hidden" name="previous_keyword" value="{{keyword}}">
+        <div class="col-auto">
+          <input type="text" class="form-control" id="inputPassword2" placeholder="エリア" name="keyword">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-info mb-3">検索</button>
+        </div>
+    </form>
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+      <h6 class="border-bottom pb-2 mb-0">検索履歴</h6>
+      {% for history in history_list %}
+      <div class="d-flex text-muted pt-3">
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+          <a href="{% url 'display' history.keyword %}"><strong class="d-block text-gray-dark">{{history.datetime|date:"Y年m月d日 H:i"}}</strong></a>
+          <a href="{% url 'display' history.keyword %}">検索キーワード : {{history.keyword}}</a>
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+</main>
+  
+  
+{% endblock content %}

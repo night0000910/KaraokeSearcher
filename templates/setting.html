@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="container">
+    <p class="display-6">検索設定</p>
+    <form method="POST" action="">{% csrf_token %}
+        <select class="form-select" aria-label="Default select example" name="range">
+            <option selected>サーチ範囲</option>
+            <option value="300m以内">300m以内</option>
+            <option value="500m以内">500m以内</option>
+            <option value="1000m以内">1000m以内</option>
+            <optin value="2000m以内">2000m以内</optin>
+            <option value="3000m以内">3000m以内</option>
+        </select>
+        <select class="form-select" aria-label="Default select example" name="count">
+            <option selected>サーチ件数</option>
+            <option value="10件">10件</option>
+            <option value="20件">20件</option>
+            <option value="30件">30件</option>
+            <option value="40件">40件</option>
+            <option value="50件">50件</option>
+            <option value="60件">60件</option>
+            <option value="70件">70件</option>
+            <option value="80件">80件</option>
+            <option value="90件">90件</option>
+            <option value="100件">100件</option>
+        </select>
+        <select class="form-select" aria-label="Default select example" name="order">
+            <option selected>並び順</option>
+            <option value="店名かな順">店名かな順</option>
+            <option value="おすすめ順">おすすめ順</option>
+        </select>
+        <select class="form-select" aria-label="Default select example" name="capacity">
+            <option selected>総席数</option>
+            <option value="True">表示する</option>
+            <option value="False">表示しない</option>
+        </select>
+        <select class="form-select" aria-label="Default select example" name="wifi">
+            <option selected>Wifiの有無</option>
+            <option value="True">表示する</option>
+            <option value="False">表示しない</option>
+        </select>
+        <select class="form-select" aria-label="Default select example" name="card">
+            <option selected>カード可</option>
+            <option value="True">表示する</option>
+            <option value="False">表示しない</option>
+        </select>
+        <select class="form-select" aria-label="Default select example" name="non_smoking">
+            <option selected>禁煙席</option>
+            <option value="True">表示する</option>
+            <option value="False">表示しない</option>
+        </select>
+        <select class="form-select" aria-label="Default select example" name="other_memo">
+            <option selected>その他設備</option>
+            <option value="True">表示する</option>
+            <option value="False">表示しない</option>
+        </select>
+        <select class="form-select" aria-label="Default select example" name="midnight">
+            <option selected>23時以降も営業</option>
+            <option value="True">表示する</option>
+            <option value="False">表示しない</option>
+        </select>
+        <select class="form-select" aria-label="Default select example" name="shop_detail_memo">
+            <option selected>備考</option>
+            <option value="True">表示する</option>
+            <option value="False">表示しない</option>
+        </select>
+        <button type="submit" class="btn btn-info">設定</button>
+    </form>
+</main>
+{% endblock content %}

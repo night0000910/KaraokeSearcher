@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import UserModel, SearchHistoryModel, SettingModel
 
-# Register your models here.
+admin.site.register(UserModel)
+admin.site.register(SearchHistoryModel)
+admin.site.register(SettingModel)
